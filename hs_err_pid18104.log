@@ -1,0 +1,265 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000008a6268d, pid=18104, tid=16912
+#
+# JRE version: 6.0_32-b05
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.7-b02 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [oracommon11.dll+0x15268d]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000005ec800):  JavaThread "main" [_thread_in_native, id=16912, stack(0x00000000029d0000,0x0000000002ad0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000000100
+
+Registers:
+RAX=0x000000000c184598, RBX=0x0000000000000004, RCX=0x000000000c1c1320, RDX=0x0000000000000004
+RSP=0x0000000002ac9140, RBP=0x000000000c1d4d38, RSI=0x0000000000000001, RDI=0x000000000c1d4d60
+R8 =0x0000000000000100, R9 =0x000000000c1c0aa0, R10=0x0000000000000074, R11=0x0000000008b47aa0
+R12=0x0000000000000004, R13=0x000000000c1c1400, R14=0x000000000c1c46f0, R15=0x0000000000000000
+RIP=0x0000000008a6268d, EFLAGS=0x0000000000010206
+
+Top of Stack: (sp=0x0000000002ac9140)
+0x0000000002ac9140:   7573726f69001c75 6977207300000000
+0x0000000002ac9150:   69706d6f00000000 65206e6f6974616c
+0x0000000002ac9160:   72542041726f7272 6e6f697461636e75
+0x0000000002ac9170:   6c6c756e20726f20 6520686374656620
+0x0000000002ac9180:   63636f20726f7272 0000006465727275
+0x0000000002ac9190:   0000000000000000 000000000c1c3d80
+0x0000000002ac91a0:   0000000000000000 000000000c1c46a0
+0x0000000002ac91b0:   000000000c1c1400 0000000008a86b82
+0x0000000002ac91c0:   0000000000000000 0000000002ac9980
+0x0000000002ac91d0:   0000000077315410 0000000000000000
+0x0000000002ac91e0:   0000000000000074 0000000008200001
+0x0000000002ac91f0:   000000000c1c46c0 000000000c1d4db0
+0x0000000002ac9200:   0000000008201c08 0000000008910000
+0x0000000002ac9210:   0000000008200000 0000000000000002
+0x0000000002ac9220:   0000000000001068 0000000008b8bbc8
+0x0000000002ac9230:   0000000000000001 000000000000005e 
+
+Instructions: (pc=0x0000000008a6268d)
+0x0000000008a6266d:   00 00 ba 04 00 00 00 4d 8d 87 00 01 00 00 4d 89
+0x0000000008a6267d:   46 70 4d 8b 8d d0 00 00 00 49 8b 89 e0 00 00 00
+0x0000000008a6268d:   45 8b 97 00 01 00 00 89 54 24 40 49 8b 91 f0 00
+0x0000000008a6269d:   00 00 45 85 d2 74 45 4c 8d 4c 24 50 48 89 44 24 
+
+
+Register to memory mapping:
+
+RAX=0x000000000c184598 is an unknown value
+RBX=0x0000000000000004 is an unknown value
+RCX=0x000000000c1c1320 is an unknown value
+RDX=0x0000000000000004 is an unknown value
+RSP=0x0000000002ac9140 is pointing into the stack for thread: 0x00000000005ec800
+RBP=0x000000000c1d4d38 is an unknown value
+RSI=0x0000000000000001 is an unknown value
+RDI=0x000000000c1d4d60 is an unknown value
+R8 =0x0000000000000100 is an unknown value
+R9 =0x000000000c1c0aa0 is an unknown value
+R10=0x0000000000000074 is an unknown value
+R11=0x0000000008b47aa0 is an unknown value
+R12=0x0000000000000004 is an unknown value
+R13=0x000000000c1c1400 is an unknown value
+R14=0x000000000c1c46f0 is an unknown value
+R15=0x0000000000000000 is an unknown value
+
+
+Stack: [0x00000000029d0000,0x0000000002ad0000],  sp=0x0000000002ac9140,  free space=996k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [oracommon11.dll+0x15268d]  ttcl2i+0x8fab
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.jdbc.odbc.JdbcOdbc.execute(J[B)V+0
+j  sun.jdbc.odbc.JdbcOdbc.SQLExecute(J)Z+46
+j  sun.jdbc.odbc.JdbcOdbcPreparedStatement.execute()Z+47
+j  sun.jdbc.odbc.JdbcOdbcPreparedStatement.executeQuery()Ljava/sql/ResultSet;+28
+j  JDBCTest.main([Ljava/lang/String;)V+175
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000006be5800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=17716, stack(0x0000000007cb0000,0x0000000007db0000)]
+  0x0000000006bd4000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=18288, stack(0x0000000007bb0000,0x0000000007cb0000)]
+  0x0000000006bbf800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=17232, stack(0x0000000007ab0000,0x0000000007bb0000)]
+  0x0000000006bbf000 JavaThread "Attach Listener" daemon [_thread_blocked, id=3424, stack(0x00000000079b0000,0x0000000007ab0000)]
+  0x0000000006bbe000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=18156, stack(0x00000000078b0000,0x00000000079b0000)]
+  0x0000000006b67000 JavaThread "Finalizer" daemon [_thread_blocked, id=18408, stack(0x00000000077b0000,0x00000000078b0000)]
+  0x0000000006b66000 JavaThread "Reference Handler" daemon [_thread_blocked, id=17808, stack(0x00000000076b0000,0x00000000077b0000)]
+=>0x00000000005ec800 JavaThread "main" [_thread_in_native, id=16912, stack(0x00000000029d0000,0x0000000002ad0000)]
+
+Other Threads:
+  0x0000000006b5c800 VMThread [stack: 0x00000000075b0000,0x00000000076b0000] [id=17772]
+  0x0000000006bf6800 WatcherThread [stack: 0x0000000007db0000,0x0000000007eb0000] [id=17152]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 37696K, used 646K [0x00000007d5eb0000, 0x00000007d88c0000, 0x0000000800000000)
+  eden space 32320K, 2% used [0x00000007d5eb0000,0x00000007d5f519a8,0x00000007d7e40000)
+  from space 5376K, 0% used [0x00000007d8380000,0x00000007d8380000,0x00000007d88c0000)
+  to   space 5376K, 0% used [0x00000007d7e40000,0x00000007d7e40000,0x00000007d8380000)
+ PSOldGen        total 86144K, used 0K [0x0000000781c00000, 0x0000000787020000, 0x00000007d5eb0000)
+  object space 86144K, 0% used [0x0000000781c00000,0x0000000781c00000,0x0000000787020000)
+ PSPermGen       total 21248K, used 3682K [0x000000077ca00000, 0x000000077dec0000, 0x0000000781c00000)
+  object space 21248K, 17% used [0x000000077ca00000,0x000000077cd989a8,0x000000077dec0000)
+
+Code Cache  [0x0000000002ad0000, 0x0000000002d40000, 0x0000000005ad0000)
+ total_blobs=229 nmethods=0 adapters=196 free_code_cache=49908736 largest_free_block=0
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042f000 	C:\Java\jdk1.6.0_32\bin\javaw.exe
+0x0000000077200000 - 0x00000000773a9000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000076fe0000 - 0x00000000770ff000 	C:\Windows\system32\kernel32.dll
+0x000007fefd200000 - 0x000007fefd26c000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefec10000 - 0x000007fefeceb000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefd710000 - 0x000007fefd7af000 	C:\Windows\system32\msvcrt.dll
+0x000007fefd610000 - 0x000007fefd62f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefda00000 - 0x000007fefdb2d000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077100000 - 0x00000000771fa000 	C:\Windows\system32\USER32.dll
+0x000007fefd7b0000 - 0x000007fefd817000 	C:\Windows\system32\GDI32.dll
+0x000007fefd5a0000 - 0x000007fefd5ae000 	C:\Windows\system32\LPK.dll
+0x000007feff0c0000 - 0x000007feff189000 	C:\Windows\system32\USP10.dll
+0x000007feff190000 - 0x000007feff1be000 	C:\Windows\system32\IMM32.DLL
+0x000007fefefb0000 - 0x000007feff0b9000 	C:\Windows\system32\MSCTF.dll
+0x000007fefd110000 - 0x000007fefd14c000 	C:\Windows\system32\nvinitx.dll
+0x000000000f000000 - 0x000000000f006000 	C:\Program Files\NVIDIA Corporation\CoProcManager\_etoured.dll
+0x000007fef9dd0000 - 0x000007fef9e14000 	C:\Program Files\NVIDIA Corporation\CoProcManager\nvd3d9wrapx.dll
+0x000007fefd820000 - 0x000007fefd9f7000 	C:\Windows\system32\SETUPAPI.dll
+0x000007fefd350000 - 0x000007fefd386000 	C:\Windows\system32\CFGMGR32.dll
+0x000007fefd630000 - 0x000007fefd707000 	C:\Windows\system32\OLEAUT32.dll
+0x000007fefed90000 - 0x000007fefef93000 	C:\Windows\system32\ole32.dll
+0x000007fefd390000 - 0x000007fefd3aa000 	C:\Windows\system32\DEVOBJ.dll
+0x000007fef9010000 - 0x000007fef9052000 	C:\Program Files\NVIDIA Corporation\CoProcManager\nvdxgiwrapx.dll
+0x000000006d8b0000 - 0x000000006e068000 	C:\Java\jdk1.6.0_32\jre\bin\server\jvm.dll
+0x000007fefb450000 - 0x000007fefb48b000 	C:\Windows\system32\WINMM.dll
+0x000000006d820000 - 0x000000006d82e000 	C:\Java\jdk1.6.0_32\jre\bin\verify.dll
+0x000000006d450000 - 0x000000006d477000 	C:\Java\jdk1.6.0_32\jre\bin\java.dll
+0x000000006d870000 - 0x000000006d882000 	C:\Java\jdk1.6.0_32\jre\bin\zip.dll
+0x000000006d4a0000 - 0x000000006d4b2000 	C:\Java\jdk1.6.0_32\jre\bin\JdbcOdbc.dll
+0x000007fef3410000 - 0x000007fef34c1000 	C:\Windows\system32\ODBC32.dll
+0x0000000000390000 - 0x00000000003c8000 	C:\Windows\system32\odbcint.dll
+0x000007fefcb10000 - 0x000007fefcb32000 	C:\Windows\system32\bcrypt.dll
+0x000007fefc490000 - 0x000007fefc4dc000 	C:\Windows\system32\bcryptprimitives.dll
+0x0000000180000000 - 0x000000018009e000 	C:\Oracle11g\BIN\SQORA32.DLL
+0x0000000074b60000 - 0x0000000074c29000 	C:\Windows\WinSxS\amd64_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.4940_none_88df89932faf0bf6\MSVCR80.dll
+0x0000000000530000 - 0x00000000005db000 	C:\Oracle11g\BIN\OCI.dll
+0x00000000773d0000 - 0x00000000773d7000 	C:\Windows\system32\PSAPI.DLL
+0x0000000008210000 - 0x00000000086ae000 	C:\Oracle11g\BIN\OraClient11.Dll
+0x00000000086b0000 - 0x0000000008810000 	C:\Oracle11g\BIN\oracore11.dll
+0x0000000008810000 - 0x000000000890f000 	C:\Oracle11g\BIN\oranls11.dll
+0x0000000002610000 - 0x0000000002630000 	C:\Oracle11g\BIN\oraunls11.dll
+0x0000000002630000 - 0x0000000002637000 	C:\Oracle11g\BIN\orauts.dll
+0x000007feff260000 - 0x000007feff2ad000 	C:\Windows\system32\WS2_32.dll
+0x000007fefefa0000 - 0x000007fefefa8000 	C:\Windows\system32\NSI.dll
+0x0000000008910000 - 0x0000000008bc7000 	C:\Oracle11g\BIN\oracommon11.dll
+0x0000000002660000 - 0x000000000269d000 	C:\Oracle11g\BIN\orasnls11.dll
+0x0000000008bd0000 - 0x0000000009ad1000 	C:\Oracle11g\BIN\orageneric11.dll
+0x0000000009ae0000 - 0x0000000009fbf000 	C:\Oracle11g\BIN\oraxml11.dll
+0x0000000071130000 - 0x0000000071239000 	C:\Windows\WinSxS\amd64_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.4940_none_88df89932faf0bf6\MSVCP80.dll
+0x0000000009fc0000 - 0x000000000a414000 	C:\Oracle11g\BIN\oran11.dll
+0x0000000006ab0000 - 0x0000000006b1f000 	C:\Oracle11g\BIN\oranl11.dll
+0x0000000008190000 - 0x00000000081c5000 	C:\Oracle11g\BIN\orantcp11.dll
+0x000000000a420000 - 0x000000000a46b000 	C:\Oracle11g\BIN\oranldap11.dll
+0x000000000a470000 - 0x000000000a5f4000 	C:\Oracle11g\BIN\orannzsbb11.dll
+0x000007fefc600000 - 0x000007fefc609000 	C:\Windows\system32\WSOCK32.dll
+0x000000000a600000 - 0x000000000a7f2000 	C:\Oracle11g\BIN\oraldapclnt11.dll
+0x000000000a800000 - 0x000000000a823000 	C:\Oracle11g\BIN\orancrypt11.dll
+0x000007fefaa90000 - 0x000007fefaab7000 	C:\Windows\system32\iphlpapi.dll
+0x000007fefaa80000 - 0x000007fefaa8b000 	C:\Windows\system32\WINNSI.DLL
+0x000000000a830000 - 0x000000000aa20000 	C:\Oracle11g\BIN\orazt11.dll
+0x000000000aa30000 - 0x000000000aa8b000 	C:\Oracle11g\BIN\oranro11.dll
+0x000000000aaa0000 - 0x000000000aaaa000 	C:\Oracle11g\BIN\oranhost11.dll
+0x000000000aac0000 - 0x000000000aac7000 	C:\Oracle11g\BIN\orancds11.dll
+0x000000000aae0000 - 0x000000000aaf1000 	C:\Oracle11g\BIN\orantns11.dll
+0x000000000ab10000 - 0x000000000abc3000 	C:\Oracle11g\BIN\oraztkg11.dll
+0x000007fefcff0000 - 0x000007fefcffb000 	C:\Windows\system32\Secur32.dll
+0x000007fefd050000 - 0x000007fefd075000 	C:\Windows\system32\SSPICLI.DLL
+0x000000000abe0000 - 0x000000000b101000 	C:\Oracle11g\BIN\orapls11.dll
+0x000000000b120000 - 0x000000000b12f000 	C:\Oracle11g\BIN\oraslax11.dll
+0x000000000b140000 - 0x000000000b147000 	C:\Oracle11g\BIN\oravsn11.dll
+0x000000000b160000 - 0x000000000b555000 	C:\Oracle11g\BIN\oraplp11.dll
+0x000000000b570000 - 0x000000000b846000 	C:\Oracle11g\BIN\orahasgen11.dll
+0x000007fefc5e0000 - 0x000007fefc5f6000 	C:\Windows\system32\NETAPI32.dll
+0x000007fefc5d0000 - 0x000007fefc5dc000 	C:\Windows\system32\netutils.dll
+0x000007fefcfc0000 - 0x000007fefcfe3000 	C:\Windows\system32\srvcli.dll
+0x000007fefc5b0000 - 0x000007fefc5c5000 	C:\Windows\system32\wkscli.dll
+0x000007fefc7d0000 - 0x000007fefc800000 	C:\Windows\system32\LOGONCLI.DLL
+0x000007fefc590000 - 0x000007fefc5a4000 	C:\Windows\system32\SAMCLI.DLL
+0x000000000b860000 - 0x000000000b928000 	C:\Oracle11g\BIN\oraocr11.dll
+0x000000000b940000 - 0x000000000ba34000 	C:\Oracle11g\BIN\oraocrb11.dll
+0x000000000ba50000 - 0x000000000ba61000 	C:\Oracle11g\BIN\oraocrutl11.dll
+0x000007fefecf0000 - 0x000007fefed09000 	C:\Windows\system32\imagehlp.dll
+0x000007fefde80000 - 0x000007fefec08000 	C:\Windows\system32\SHELL32.dll
+0x000007fefd520000 - 0x000007fefd591000 	C:\Windows\system32\SHLWAPI.dll
+0x000000000ba80000 - 0x000000000bacb000 	C:\Oracle11g\BIN\oracell11.dll
+0x000000000bae0000 - 0x000000000bb3e000 	C:\Oracle11g\BIN\orasql11.dll
+0x000000000bb50000 - 0x000000000bb70000 	C:\Oracle11g\BIN\OraPlc11.Dll
+0x000000000bb80000 - 0x000000000bb8d000 	C:\ORACLE11G\BIN\SQRESUS.DLL
+0x0000000070f90000 - 0x000000007112c000 	C:\Windows\WinSxS\amd64_microsoft.vc80.mfc_1fc8b3b9a1e18e3b_8.0.50727.4053_none_8444db7d32915e4c\MFC80.DLL
+0x0000000070f80000 - 0x0000000070f8d000 	C:\Windows\WinSxS\amd64_microsoft.vc80.mfcloc_1fc8b3b9a1e18e3b_8.0.50727.4053_none_bc1d1e5b0be08790\MFC80ENU.DLL
+0x000007fefc980000 - 0x000007fefc9d5000 	C:\Windows\system32\mswsock.dll
+0x000007fefc970000 - 0x000007fefc977000 	C:\Windows\System32\wship6.dll
+0x000007fefd150000 - 0x000007fefd15f000 	C:\Windows\system32\profapi.dll
+0x000007fefb430000 - 0x000007fefb445000 	C:\Windows\system32\NLAapi.dll
+0x000007fef7950000 - 0x000007fef7965000 	C:\Windows\system32\napinsp.dll
+0x000007fef7970000 - 0x000007fef7989000 	C:\Windows\system32\pnrpnsp.dll
+0x000007fefc800000 - 0x000007fefc85b000 	C:\Windows\system32\DNSAPI.dll
+0x000007fef7930000 - 0x000007fef793b000 	C:\Windows\System32\winrnr.dll
+0x000007fef7940000 - 0x000007fef7950000 	C:\Windows\system32\wshbth.dll
+0x0000000071600000 - 0x0000000071626000 	C:\Program Files\Bonjour\mdnsNSP.dll
+0x000007fefc1b0000 - 0x000007fefc1b7000 	C:\Windows\System32\wshtcpip.dll
+0x000007fef8270000 - 0x000007fef8278000 	C:\Windows\system32\rasadhlp.dll
+0x000007fef9d70000 - 0x000007fef9dc3000 	C:\Windows\System32\fwpuclnt.dll
+0x000007fef99b0000 - 0x000007fef99d8000 	C:\Windows\system32\odbccp32.dll
+0x000007fefc0e0000 - 0x000007fefc0ec000 	C:\Windows\system32\VERSION.dll
+0x00000000705a0000 - 0x00000000705a3000 	C:\Windows\system32\security.dll
+0x000007fefafc0000 - 0x000007fefafcc000 	C:\Windows\system32\DSROLE.DLL
+0x000007fefc3e0000 - 0x000007fefc3ea000 	C:\Windows\system32\credssp.dll
+0x000007fefc910000 - 0x000007fefc961000 	C:\Windows\system32\msv1_0.DLL
+0x000007fefcfa0000 - 0x000007fefcfb4000 	C:\Windows\system32\cryptdll.dll
+0x000007fef6d20000 - 0x000007fef6d2f000 	C:\Windows\system32\cscapi.dll
+0x000007fefd0e0000 - 0x000007fefd0ef000 	C:\Windows\system32\CRYPTBASE.dll
+0x000007fefbb40000 - 0x000007fefbb96000 	C:\Windows\system32\uxtheme.dll
+0x0000000010100000 - 0x0000000010112000 	C:\Program Files\SetPoint\lgscroll.dll
+0x000007fefbf80000 - 0x000007fefbfad000 	C:\Windows\system32\ntmarta.dll
+0x000007fefd5b0000 - 0x000007fefd602000 	C:\Windows\system32\WLDAP32.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: JDBCTest
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Java\jdk1.5.0_22
+CLASSPATH=.;C:\Program Files (x86)\Java\jre6\lib\ext\QTJava.zip
+PATH=C:\Program Files (x86)\Serena\Dimensions 12.2.1\CM\prog64;C:\Rails\Ruby193\bin;C:\Oracle11g\bin;C:\Program Files\Serena\Dimensions 12.2\CM\prog;C:\Program Files\Serena\Dimensions 12.2\CM\prog\Microsoft.VC90.MFC;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\Services\IPT\;C:\Program Files\Intel\DMIX;C:\Program Files\Dell\Dell Data Protection\Access\Advanced\Wave\Gemalto\Access Client\v5\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\NTRU Cryptosystems\NTRU TCG Software Stack\bin\;C:\Program Files\NTRU Cryptosystems\NTRU TCG Software Stack\bin\;C:\Java\jdk1.5.0_22\bin;C:\Rails\Git\cmd
+USERNAME=dbabu
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 8266648k(3982880k free), swap 16531444k(11327648k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.7-b02) for windows-amd64 JRE (1.6.0_32-b05), built on Apr  5 2012 13:39:03 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Thu Jun 28 08:49:38 2012
+elapsed time: 8 seconds
+
